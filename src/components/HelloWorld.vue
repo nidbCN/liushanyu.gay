@@ -7,9 +7,8 @@
       <v-card-text>
         刘善宇，山东枣庄人也，生性嗜好同行，世人谓之曰gay。
         <v-carousel :hide-delimitersi="true" :cycle="true" :show-arrows="false">
-          <v-carousel-item src="/banners/01.webp"></v-carousel-item>
-          <v-carousel-item src="/banners/02.webp"></v-carousel-item>
-          <v-carousel-item src="/banners/03.webp"></v-carousel-item>
+          <v-carousel-item v-for="(banner, i) in BannerList" :key="i" :src="'/banners/' + banner.file">
+          </v-carousel-item>
         </v-carousel>
       </v-card-text>
     </v-card>
@@ -17,5 +16,5 @@
 </template>
 
 <script setup>
-//
+import BannerList from "@/assets/BannerList";
 </script>
